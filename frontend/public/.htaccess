@@ -1,0 +1,8 @@
+# Lets React Router handle deep links when hosted on Apache (XAMPP / cPanel)
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/api
+RewriteRule . /index.html [L]

@@ -1,0 +1,2 @@
+/* Minimal reset (replaces the Vite starter styles). Site styles live in styles/main.css */
+html,body,#root{margin:0;padding:0;width:100%}
