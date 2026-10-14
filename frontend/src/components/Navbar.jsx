@@ -6,7 +6,7 @@ import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const close = () => setOpen(false);
   return (
     <header>
@@ -20,7 +20,7 @@ export default function Navbar() {
             <NavLink key={to} to={to} end={to === "/"} onClick={close}>{label}</NavLink>
           ))}
           {user
-            ? <button className="login" onClick={() => { logout(); close(); }}>Log out</button>
+            ? <Link className="login" to="/dashboard" onClick={close}>My Dashboard</Link>
             : <Link className="login" to="/signup" onClick={close}>Sign Up/Login</Link>}
         </nav>
       </div>

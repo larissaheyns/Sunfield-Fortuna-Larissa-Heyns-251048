@@ -13,7 +13,7 @@ export default function Auth({ mode }) {
   const [show, setShow] = useState(false);
   const [status, setStatus] = useState({ state: "idle", msg: "" });
 
-  if (ready && user) return <Navigate to="/" replace />; // logged in (also runs right after success)
+  if (ready && user) return <Navigate to="/dashboard" replace />;
 
   async function submit(e) {
     e.preventDefault();

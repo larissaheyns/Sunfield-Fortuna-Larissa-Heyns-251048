@@ -5,7 +5,6 @@ import { SITE } from "../data/site";
 import { api } from "../lib/api";
 import "../styles/contact.css";
 
-// Optional extras – add `hours`, `instagram`, `instagramUrl` to data/site.js to change these.
 const HOURS = SITE.hours ?? "Mon – Fri|08:00 – 16:00";
 const FACEBOOK = SITE.facebook ?? "Sunfield Fortuna";
 const FACEBOOK_URL = SITE.facebookUrl ?? "https://www.facebook.com/";
@@ -37,7 +36,7 @@ const DETAILS = [
   { tone: "green", label: "Address", note: "Visit us|We’d love to meet you!",
     icon: <Icon><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></Icon>,
     value: SITE.address },
-    { tone: "gold", label: "Follow us", note: "Stay up to date with|our latest news and stories.",
+  { tone: "gold", label: "Follow us", note: "Stay up to date with|our latest news and stories.",
     icon: <Icon><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></Icon>,
     value: <a href={FACEBOOK_URL} target="_blank" rel="noreferrer">{FACEBOOK}</a> },
 ];

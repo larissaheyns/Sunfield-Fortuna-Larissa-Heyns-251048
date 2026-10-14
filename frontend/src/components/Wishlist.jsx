@@ -9,7 +9,7 @@ export default function Wishlist() {
   const [items, setItems] = useState(FALLBACK);
 
   useEffect(() => {
-    api("/wishlist").then((rows) => rows.length && setItems(rows)).catch(() => {});
+    api("/wishlist").then(setItems).catch(() => {});
   }, []);
 
   return (
@@ -21,7 +21,11 @@ export default function Wishlist() {
       <div className="paper-wrap">
         <div className="paper">
           <h2 id="wishlist-h">Wishlist</h2>
-          <ul>{items.map((w) => <li key={w.id}>{w.item}</li>)}</ul>
+          <ul>
+            {items.map((w) => (
+              <li key={w.id}>{w.item}{w.still_needed ? <span className="need"> × {w.still_needed}</span> : null}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

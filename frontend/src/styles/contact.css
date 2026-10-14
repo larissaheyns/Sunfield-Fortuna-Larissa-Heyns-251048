@@ -1,4 +1,4 @@
-.contact-page{--warm:#fde7a1;background:linear-gradient(#fdf7e8 60%,#fdeebd)}
+.contact-page{background:linear-gradient(var(--cream) 60%,#fdeebd)}
 .contact-page .hero{background:var(--warm)}
 .contact-page .hero::before{background:linear-gradient(100deg,var(--warm) 0 40%,transparent 66%)}
 .contact-page .hero .tag{font-family:Poppins,sans-serif;font-size:.85rem;letter-spacing:.2em}

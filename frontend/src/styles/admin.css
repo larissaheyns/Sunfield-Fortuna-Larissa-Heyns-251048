@@ -1,0 +1,44 @@
+.stats.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.admin-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem;margin:1.5rem clamp(1rem,3vw,2.5rem) 0}
+.admin-grid .history{margin:0}
+
+/* monthly chart */
+.chart{display:flex;align-items:stretch;gap:.8rem;height:250px}
+.chart-col{flex:1;min-width:0;display:grid;grid-template-rows:1fr auto auto auto;justify-items:center;align-items:end;gap:.15rem;text-align:center}
+.chart-bar{width:min(46px,100%);background:var(--green);border-radius:10px 10px 0 0;min-height:4px}
+.chart-col.current .chart-bar{background:#f6b73c}
+.chart-col b{color:var(--brown);font-size:.9rem;margin-top:.3rem}
+.chart-col small{font-size:.75rem;color:#8b6b4d}
+
+/* wishlist table + green bars */
+.table-scroll{overflow-x:auto}
+.wl-table{width:100%;border-collapse:collapse;min-width:520px}
+.wl-table th{text-align:left;font-weight:600;font-size:.9rem;color:var(--brown);padding:.5rem .6rem;border-bottom:1px solid var(--line)}
+.wl-table td{padding:.7rem .6rem;border-bottom:1px solid #efe0c6;vertical-align:middle}
+.wl-table select,.wl-table input[type=number]{font:inherit;padding:.4rem .6rem;border:1px solid var(--line);border-radius:10px;background:#fffdf7;color:var(--text)}
+.wl-table input[type=number]{width:5.5rem}
+.meter{height:14px;min-width:120px;background:#efe3cd;border-radius:999px;overflow:hidden}
+.meter span{display:block;height:100%;background:var(--green);border-radius:999px;transition:width .3s}
+.meter-cell{min-width:150px}
+.meter-label{display:block;font-size:.8rem;color:#8b6b4d;margin-top:.2rem}
+.row-actions{white-space:nowrap;text-align:right}
+
+/* forms */
+.admin-form{max-width:none;grid-template-columns:2fr 1.2fr 1fr auto;align-items:end;gap:.9rem}
+.record-form{max-width:none;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:end;gap:.9rem}
+.admin-form select,.record-form select{font:inherit;padding:.75rem 1rem;border:1px solid var(--line);border-radius:12px;background:#fffdf7;color:var(--text)}
+.admin-form .btn,.record-form .btn{border:0;font:inherit;font-weight:500;cursor:pointer;justify-content:center}
+.btn-ghost,.btn-danger{font:500 .9rem Poppins,sans-serif;padding:.4rem 1rem;border-radius:999px;background:transparent;cursor:pointer}
+.btn-ghost{color:var(--green);border:1px solid var(--green)}
+.btn-ghost:disabled{opacity:.4;cursor:default}
+.btn-danger{color:#a3321f;border:1px solid transparent;margin-left:.3rem}
+.btn-danger:hover{border-color:#a3321f}
+.admin-page .form-msg{margin-top:1rem}
+.admin-page .history:last-child{margin-bottom:2rem}
+
+/* "× 12" next to an item on the website notebook */
+.need{opacity:.75}
+
+@media(max-width:1100px){.stats.four{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-grid{grid-template-columns:1fr}}
+@media(max-width:800px){.admin-form{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stats.four,.admin-form{grid-template-columns:1fr}}
