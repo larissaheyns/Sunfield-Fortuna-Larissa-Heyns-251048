@@ -29,7 +29,7 @@ const ACTIONS = [
     title: "Donate",
     text: "Help us create lasting change in our community.",
     link: "Give now",
-    to: "/involved",
+    to: "/donate",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <circle cx="32" cy="32" r="18" strokeDasharray="3 5" />

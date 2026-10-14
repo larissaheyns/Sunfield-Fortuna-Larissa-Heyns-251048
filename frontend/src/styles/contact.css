@@ -1,0 +1,45 @@
+.contact-page{--warm:#fde7a1;background:linear-gradient(#fdf7e8 60%,#fdeebd)}
+.contact-page .hero{background:var(--warm)}
+.contact-page .hero::before{background:linear-gradient(100deg,var(--warm) 0 40%,transparent 66%)}
+.contact-page .hero .tag{font-family:Poppins,sans-serif;font-size:.85rem;letter-spacing:.2em}
+.contact-page h2{font-family:Fraunces,serif;color:var(--brown);font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 1.2rem}
+
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.55fr) minmax(0,1.25fr);gap:1.5rem;align-items:start;padding:2.5rem clamp(1rem,4vw,3rem) 3rem}
+.details{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.detail{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,10.5rem);gap:1rem;align-items:center;padding:1rem 1.2rem;background:#fbefd0;border-radius:16px;line-height:1.45}
+.detail div a{font-size:.95rem;overflow-wrap:anywhere}
+.detail strong{display:block;color:var(--brown);font-weight:600}
+.detail a:hover{text-decoration:underline;text-underline-offset:4px}
+.dot{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.dot.green{background:var(--green)}.dot.gold{background:#f6b73c}
+.dot svg{width:24px;height:24px}
+.note{margin:0;padding-left:1rem;border-left:1px solid var(--line);font-size:.85rem;display:grid;align-content:center}
+
+.decor{position:relative;display:grid;justify-items:center;text-align:center;padding-top:1rem}
+.hand{font-family:Caveat,cursive;font-weight:700;color:var(--brown);line-height:1.05;margin:0}
+.decor .hand{font-size:clamp(1.8rem,2.6vw,2.4rem);transform:rotate(-8deg)}
+.decor>svg:not(.plant){width:34px;height:34px;color:#f6b73c;margin:.6rem 0}
+.plant{color:#6d8a43;opacity:.85;width:110px}
+
+.form-card{background:#fffaf0;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:clamp(1.4rem,3vw,2.2rem)}
+.form-card h2{margin-bottom:.3rem}
+.intro{margin:0 0 1.4rem;font-size:1rem}
+.contact-form{max-width:none;gap:.9rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.contact-form .field{display:grid;gap:.1rem;padding:.55rem .9rem;border:1px solid var(--line);border-radius:12px;background:#fffdf7;font-weight:500;font-size:.82rem;color:var(--brown)}
+.contact-form .field:focus-within{border-color:var(--green);box-shadow:0 0 0 3px rgba(74,106,44,.2)}
+.contact-form .field input,.contact-form .field select,.contact-form .field textarea{border:0;outline:0;background:transparent;padding:.15rem 0;font:400 .95rem Poppins,sans-serif;color:var(--text);width:100%;border-radius:0}
+.contact-form .field select{appearance:none;cursor:pointer;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235a3416' stroke-width='3'><path d='m6 9 6 6 6-6'/></svg>") right center/14px no-repeat}
+.contact-form .field textarea{resize:vertical;min-height:90px}
+.contact-form .btn{display:inline-flex;gap:.6rem;align-items:center}
+.contact-form .btn svg{width:18px;height:18px}
+.contact-form .form-msg{padding:.8rem 1rem;border-radius:12px}
+.contact-form .form-msg.ok{background:#e4ecd6}.contact-form .form-msg.err{background:#f6dcd5}
+
+.contact-band{position:relative;margin-top:1rem;background:#fbe29a;border-radius:100% 100% 0 0/60px 60px 0 0;padding:3.5rem clamp(1rem,4vw,3rem) 2rem;min-height:140px}
+.contact-band .hand{font-size:clamp(1.6rem,3vw,2.2rem);transform:rotate(-6deg);width:max-content}
+.contact-band .plant{position:absolute;right:4%;bottom:0;width:90px}
+
+@media(max-width:1100px){.contact-grid{grid-template-columns:1fr 1fr}.decor{display:none}}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr}.detail{grid-template-columns:auto 1fr}.note{grid-column:1/-1;border-left:0;border-top:1px solid var(--line);padding:.6rem 0 0}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}.contact-form .btn{justify-self:stretch;justify-content:center}.contact-band .plant{display:none}}

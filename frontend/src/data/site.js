@@ -1,10 +1,12 @@
-// Replace the TODO values with the real details.
+
 export const SITE = {
   name: "Sunfield Fortuna",
   tagline: "Supporting lives, building community.",
-  email: "TODO@example.org",
-  phone: "TODO",
-  address: "TODO – street address, Gauteng",
+  email: "themanager@sunfieldhomes.co.za",
+  phone: "+27 72 826 0556",
+  address: "2410 Balfour, South Africa",
+  facebook: "Sunfield Fortuna",
+  facebookUrl: "https://www.facebook.com/SunfieldHomeFortuna/",
 };
 
 export const NAV = [

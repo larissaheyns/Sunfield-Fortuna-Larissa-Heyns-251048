@@ -5,8 +5,9 @@ import Mission from "./pages/Mission";
 import Involved from "./pages/Involved";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
-import Login from "./pages/Login";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import Donate from "./pages/Donate";
 
 export default function App() {
   return (
@@ -17,8 +18,10 @@ export default function App() {
         <Route path="/involved" element={<Involved />} />
         <Route path="/news" element={<News />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Auth key="login" mode="login" />} />
+        <Route path="/signup" element={<Auth key="signup" mode="signup" />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/donate" element={<Donate />} />
       </Route>
     </Routes>
   );

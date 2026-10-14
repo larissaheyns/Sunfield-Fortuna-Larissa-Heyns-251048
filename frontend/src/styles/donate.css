@@ -1,0 +1,16 @@
+.badge{display:inline-block;margin:0 0 1rem;padding:.25rem .9rem;border-radius:999px;background:var(--gold);color:var(--brown);font-weight:600;font-size:.9rem}
+.donate-options{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-bottom:2rem}
+.option{display:flex;flex-direction:column;gap:.5rem;text-align:left;font:inherit;color:var(--text);background:var(--cream2);border:2px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:1.6rem;cursor:pointer;transition:border-color .15s,transform .15s}
+.option:hover{transform:translateY(-2px)}
+.option svg{width:72px;height:72px;color:#a46a26}
+.option strong{font-size:1.5rem;font-weight:600;color:var(--brown)}
+.option span{font-size:1.1rem;line-height:1.5}
+.option[aria-pressed="true"]{border-color:var(--green);box-shadow:0 0 0 2px var(--green),var(--shadow)}
+.donate-panel{background:var(--cream2);border:1px solid var(--line);border-radius:28px;padding:2rem}
+.donate-panel h3{font-family:Fraunces,serif;color:var(--brown);font-size:1.8rem;margin:0 0 .5rem}
+.donate-panel p{max-width:60ch;font-size:1.1rem}
+.donate-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-top:1.5rem}
+button.btn{border:0;font:inherit;font-weight:500;cursor:pointer}
+.btn.is-disabled{background:#9aa88a;box-shadow:none;cursor:not-allowed}
+.btn.is-disabled:hover{transform:none}
+@media(max-width:700px){.donate-options{grid-template-columns:1fr}}

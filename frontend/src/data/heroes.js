@@ -1,6 +1,3 @@
-// One entry per page. The Hero image is picked up automatically from
-// src/assets/heroes/<key>.(png|jpg|jpeg|webp), e.g. mission.jpg for "mission".
-// Pages without their own image fall back to home.*
 const files = import.meta.glob("../assets/heroes/*.{png,jpg,jpeg,webp}", { eager: true, import: "default" });
 const img = (key) => Object.entries(files).find(([p]) => p.split("/").pop().startsWith(key + "."))?.[1];
 
@@ -14,7 +11,15 @@ const HEROES = {
     alt: "A caregiver embracing a child",
   },
   mission: { title: "Our Mission", sub: "Building stronger,\nhealthier communities." },
-  involved: { title: "Get Involved", sub: "Volunteer, partner\nor make a difference." },
+  involved: {
+    tag: "GET INVOLVED",
+    title: "Make a difference today",
+    text: "Your support helps us to provide essential resources, care and opportunities for people with disabilities and their families.",
+    cta: { label: "Donate Now", to: "/donate" },
+    alt: "A smiling girl with her caregiver",
+    compact: false,
+  },
+  donate: { tag: "DONATE", title: "Give to Sunfield Fortuna", sub: "Every gift makes\na difference." },
   news: { title: "News Stories", sub: "What's happening\nat Sunfield." },
   contact: { title: "Contact", sub: "We'd love to\nhear from you." },
   login: { title: "Sign Up / Login", sub: "Welcome back." },
@@ -22,5 +27,5 @@ const HEROES = {
 
 export function heroFor(key) {
   const h = HEROES[key];
-  return { ...h, image: img(key) ?? img("home"), compact: key !== "home" };
+    return { ...h, image: img(key) ?? img("home"), compact: h.compact ?? key !== "home" };
 }
