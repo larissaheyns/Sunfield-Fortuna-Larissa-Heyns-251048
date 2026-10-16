@@ -1,5 +1,4 @@
--- Import via phpMyAdmin (http://localhost/phpmyadmin → Import) or:
---   C:\xampp\mysql\bin\mysql -u root < database\fortuna.sql
+
 CREATE DATABASE IF NOT EXISTS fortuna CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE fortuna;
 
@@ -7,7 +6,7 @@ CREATE TABLE IF NOT EXISTS team_members (
   id         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name       VARCHAR(100) NOT NULL UNIQUE,
   role       VARCHAR(150) NOT NULL,
-  photo_url  VARCHAR(255) NULL,            -- e.g. /uploads/brenda.jpg (NULL = initials)
+  photo_url  VARCHAR(255) NULL,            
   sort_order INT NOT NULL DEFAULT 0,
   is_active  TINYINT(1) NOT NULL DEFAULT 1,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

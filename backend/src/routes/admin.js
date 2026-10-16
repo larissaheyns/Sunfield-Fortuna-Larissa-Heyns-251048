@@ -3,7 +3,7 @@ import { pool } from "../db.js";
 import { requireAuth, requireAdmin } from "../middleware/requireAuth.js";
 
 const router = Router();
-router.use(requireAuth, requireAdmin); 
+router.use(requireAuth, requireAdmin); // every route below is admin-only
 
 const clean = (v, max) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 const int = (v, min, max) => (Number.isInteger(Number(v)) && Number(v) >= min && Number(v) <= max ? Number(v) : null);
@@ -18,7 +18,7 @@ const WISHLIST_SQL = `
 const wishlist = async () => (await pool.query(WISHLIST_SQL))[0].map((r) => ({ ...r, received: Number(r.received) }));
 
 const DONATION_SQL = `
-  SELECT d.id, d.kind, d.description, d.amount, d.quantity, d.status,
+  SELECT d.id, d.kind, d.description, d.amount, d.quantity, d.status, d.reference,
          DATE_FORMAT(d.donated_on, '%Y-%m-%d') AS donated_on,
          CONCAT(u.first_name, ' ', u.last_name) AS donor
   FROM donations d JOIN users u ON u.id = d.user_id
@@ -84,7 +84,7 @@ router.patch("/wishlist/:id", async (req, res) => {
   res.json(await wishlist());
 });
 
-router.delete("/wishlist/:id", async (req, res) => { 
+router.delete("/wishlist/:id", async (req, res) => { // hidden, not deleted, so past donations keep their link
   await pool.query("UPDATE wishlist_items SET is_active = 0 WHERE id = ?", [Number(req.params.id)]);
   res.json(await wishlist());
 });

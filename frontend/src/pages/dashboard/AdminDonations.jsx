@@ -9,7 +9,7 @@ export default function AdminDonations() {
   const [wish, setWish] = useState([]);
   const [list, setList] = useState([]);
   const [kind, setKind] = useState("items");
-  const [item, setItem] = useState("");   
+  const [item, setItem] = useState(""); 
   const [status, setStatus] = useState({ state: "idle", msg: "" });
 
   useEffect(() => {
@@ -87,7 +87,7 @@ export default function AdminDonations() {
             {list.map((d) => (
               <li className="don admin-don" key={d.id}>
                 <span className={`don-ic ${d.kind}`}>{iconFor(d)}</span>
-                <div><strong>{d.description}</strong><small>{d.donor} · {fmtDate(d.donated_on)}</small></div>
+                <div><strong>{d.description}</strong><small>{d.donor} · {fmtDate(d.donated_on)}{d.reference ? ` · ${d.reference}` : ""}</small></div>
                 <span className="don-qty">{qtyText(d)}</span>
                 {d.status === "received"
                   ? <span className="status received">✓ Received</span>

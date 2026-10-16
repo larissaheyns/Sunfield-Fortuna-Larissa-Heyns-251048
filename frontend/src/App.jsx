@@ -2,12 +2,15 @@ import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import Layout from "./components/Layout";
 import DashboardLayout from "./components/DashboardLayout";
+import SiteMeta from "./components/SiteMeta";
+import CookieBanner from "./components/CookieBanner";
 import Home from "./pages/Home";
 import Mission from "./pages/Mission";
 import Involved from "./pages/Involved";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
+import Privacy from "./pages/Privacy";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import Overview from "./pages/dashboard/Overview";
@@ -21,6 +24,7 @@ function DashboardHome() {
   const { user } = useAuth();
   return user.role === "admin" ? <Navigate to="/dashboard/admin" replace /> : <Overview />;
 }
+
 function AdminOnly() {
   const { user } = useAuth();
   return user.role === "admin" ? <Outlet /> : <Navigate to="/dashboard" replace />;
@@ -29,6 +33,7 @@ function AdminOnly() {
 export default function App() {
   return (
     <AuthProvider>
+      <SiteMeta />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -37,6 +42,7 @@ export default function App() {
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/login" element={<Auth key="login" mode="login" />} />
           <Route path="/signup" element={<Auth key="signup" mode="signup" />} />
           <Route path="*" element={<NotFound />} />
@@ -52,6 +58,7 @@ export default function App() {
           </Route>
         </Route>
       </Routes>
+      <CookieBanner />
     </AuthProvider>
   );
 }

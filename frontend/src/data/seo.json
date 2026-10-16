@@ -1,0 +1,34 @@
+{
+  "siteName": "Sunfield Fortuna",
+  "private": ["/login", "/signup", "/dashboard"],
+  "pages": {
+    "/": {
+      "title": "Sunfield Fortuna | Supporting lives, building community",
+      "description": "Since 1991 Sunfield Home Fortuna has cared for upward of 70 residents, providing for their social, physical and medical needs. See how you can help."
+    },
+    "/mission": {
+      "title": "Our Mission | Sunfield Fortuna",
+      "description": "To provide a caring home for physically and mentally disabled individuals, meeting their social, physical and medical needs with dignity, as we have since 1991."
+    },
+    "/involved": {
+      "title": "Get Involved & Our Wishlist | Sunfield Fortuna",
+      "description": "See the items Sunfield Fortuna urgently needs. Every donation, big or small, helps create a safer, healthier and more inclusive environment."
+    },
+    "/news": {
+      "title": "News Stories | Sunfield Fortuna",
+      "description": "Read news coverage about Sunfield Home Fortuna and the people who live and work there."
+    },
+    "/contact": {
+      "title": "Contact Us | Sunfield Fortuna",
+      "description": "Get in touch with Sunfield Fortuna to ask a question, volunteer, donate or just say hello."
+    },
+    "/donate": {
+      "title": "Donate | Sunfield Fortuna",
+      "description": "Support Sunfield Fortuna by donating items or money to provide safety, care and opportunity to those who need it most."
+    },
+    "/privacy": {
+      "title": "Privacy Notice | Sunfield Fortuna",
+      "description": "How Sunfield Fortuna collects, uses and protects your personal information, and how to manage your cookie choices."
+    }
+  }
+}

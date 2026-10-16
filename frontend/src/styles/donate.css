@@ -14,3 +14,39 @@ button.btn{border:0;font:inherit;font-weight:500;cursor:pointer}
 .btn.is-disabled{background:#9aa88a;box-shadow:none;cursor:not-allowed}
 .btn.is-disabled:hover{transform:none}
 @media(max-width:700px){.donate-options{grid-template-columns:1fr}}
+
+/* notice, bank details, goods */
+.donate-notice{background:#fbe6b0;border:1px solid #f0cf86;border-radius:18px;padding:1.1rem 1.4rem;margin-bottom:2rem}
+.donate-notice h2{margin:0 0 .3rem;font-size:1.3rem}
+.donate-notice p{margin:0;max-width:75ch}
+.bank{margin:1.2rem 0;display:grid;gap:.1rem;max-width:560px}
+.bank>div{display:grid;grid-template-columns:150px 1fr;gap:1rem;padding:.7rem 0;border-bottom:1px solid #efe0c6;align-items:center}
+.bank dt{font-weight:600;color:var(--brown)}
+.bank dd{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:.8rem}
+.bank strong{font-size:1.2rem;letter-spacing:.04em}
+.copy{font:500 .85rem Poppins,sans-serif;padding:.25rem .8rem;border-radius:999px;border:1px solid var(--green);background:transparent;color:var(--green);cursor:pointer}
+.copy:hover{background:var(--green);color:#fff}
+.fine{font-size:.95rem}
+.donate-panel h4{font-family:Fraunces,serif;color:var(--brown);font-size:1.25rem;margin:1.6rem 0 .3rem}
+.need-list,.contact-list{list-style:none;margin:1rem 0;padding:0;display:grid;gap:.8rem;max-width:62ch}
+.need-list li{display:grid;gap:.1rem;padding:.8rem 1rem;background:#fdf6e6;border:1px solid #efe0c6;border-radius:14px}
+.need-list strong{color:var(--brown)}
+.contact-list li{display:flex;flex-wrap:wrap;gap:.2rem .6rem;align-items:baseline}
+.phones{display:flex;gap:1rem;flex-basis:100%}
+.phones a{color:var(--green);font-weight:600}
+.phones a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:520px){.bank>div{grid-template-columns:1fr;gap:.1rem}}
+
+/* pledge form + confirmation */
+.step{margin:1.2rem 0 .6rem}
+.pledge{max-width:460px;gap:.9rem}
+.quick{display:flex;flex-wrap:wrap;gap:.5rem}
+.quick button{font:500 .95rem Poppins,sans-serif;padding:.45rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:#fffdf7;color:var(--brown);cursor:pointer}
+.quick button.on,.quick button:hover{border-color:var(--green);background:#e4ecd6}
+.pledge .btn{justify-self:start}
+.pledge-done{margin:1.2rem 0;padding:1.2rem 1.4rem;background:#e4ecd6;border-radius:18px;max-width:560px}
+.pledge-done h4{margin:0 0 .5rem}
+.ref{display:flex;align-items:center;gap:.8rem;margin:.3rem 0 .8rem}
+.ref strong{font-size:1.6rem;letter-spacing:.06em;color:var(--brown)}
+.login-prompt{margin:1.2rem 0;padding:1rem 1.2rem;background:#fdf6e6;border:1px solid #efe0c6;border-radius:14px;max-width:560px}
+.login-prompt a{color:var(--green);font-weight:600;text-decoration:underline;text-underline-offset:3px}

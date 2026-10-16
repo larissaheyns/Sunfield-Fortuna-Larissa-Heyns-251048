@@ -30,7 +30,7 @@ export default function DonationList({ items }) {
       {items.map((d) => (
         <li className="don" key={d.id}>
           <span className={`don-ic ${d.kind}`}>{iconFor(d)}</span>
-          <div><strong>{d.description}</strong><small>{d.donor ? `${d.donor} · ` : ""}{fmtDate(d.donated_on)}</small></div>
+          <div><strong>{d.description}</strong><small>{d.donor ? `${d.donor} · ` : ""}{fmtDate(d.donated_on)}{d.reference ? ` · ${d.reference}` : ""}</small></div>
           <span className="don-qty">{qtyText(d)}</span>
           <span className={`status ${d.status}`}>{d.status === "received" ? "✓ Received" : "Pending"}</span>
         </li>
