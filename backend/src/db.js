@@ -1,3 +1,4 @@
+
 import "dotenv/config";
 import mysql from "mysql2/promise";
 
@@ -9,4 +10,7 @@ export const pool = mysql.createPool({
   database: process.env.DB_NAME || "fortuna",
   waitForConnections: true,
   connectionLimit: 10,
+  ssl: {
+    rejectUnauthorized: true,
+  },
 });
