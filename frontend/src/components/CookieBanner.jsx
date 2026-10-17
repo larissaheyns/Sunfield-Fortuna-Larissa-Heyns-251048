@@ -4,6 +4,12 @@ import "../styles/cookie.css";
 
 export default function CookieBanner() {
   const choice = useConsent();
+
+  console.log("Cookie banner debug:", {
+    analyticsConfigured,
+    choice
+  });
+
   if (!analyticsConfigured || choice) return null;
   return (
     <div className="cookie" role="region" aria-label="Cookie notice">
