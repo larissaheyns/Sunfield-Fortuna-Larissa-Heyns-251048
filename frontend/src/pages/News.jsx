@@ -45,7 +45,7 @@ export default function News() {
                 <p className="news-meta">{s.source} · {fmt(s.date)}</p>
                 {s.summary && <p>{s.summary}</p>}
                 <a className="btn" href={s.url} target="_blank" rel="noopener noreferrer">
-                  Read on {s.source} <span aria-hidden="true">→</span>
+                  Read More <span aria-hidden="true">→</span>
                   <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </div>
