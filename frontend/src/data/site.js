@@ -12,7 +12,7 @@ export const SITE = {
 export const NAV = [
   { label: "Home", to: "/" },
   { label: "Our mission", to: "/mission" },
-  { label: "Involved", to: "/involved" },
+  { label: "Donate", to: "/involved" },
   { label: "News Stories", to: "/news" },
   { label: "Contact", to: "/contact" },
 ];

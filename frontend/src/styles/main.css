@@ -117,6 +117,7 @@ nav a[aria-current="page"]:not(.login):not(.avatar){text-decoration:underline;te
 .arrow:hover:not(:disabled){background:var(--gold)}
 .arrow:disabled{background:var(--cream2);color:#c9b79c;box-shadow:none;cursor:default}
 @media(max-width:600px){
+  .card{margin-left: 5%; margin-right: 5%;}
   .carousel{grid-template-columns:minmax(0,1fr)}
   .arrow{display:none}
 }
