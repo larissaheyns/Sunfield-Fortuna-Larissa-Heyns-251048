@@ -1,0 +1,44 @@
+.dash{grid-template-columns:260px minmax(0,1fr)}
+.dash-side{min-width:0}
+.stat>div,.don>div{min-width:0}
+.stat strong{overflow-wrap:anywhere}
+
+.profile-form .form-row>label,.admin-form>label,.record-form>label{min-width:0}
+.profile-form input,.admin-form input,.admin-form select,.record-form input,.record-form select{width:100%;min-width:0}
+.admin-form{grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1fr) auto}
+
+@media(min-width:801px) and (max-width:1100px){
+  .dash{grid-template-columns:210px minmax(0,1fr)}
+  .dash-nav a{padding:.7rem .75rem;gap:.6rem}
+  .dash-logo{height:70px}
+  .admin-form{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .admin-form .btn{grid-column:1/-1}
+}
+
+@media(max-width:800px){
+  .dash{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:560px){
+  .admin-form{grid-template-columns:minmax(0,1fr)}
+  .dash-hero{min-height:170px}
+  .dash-hero img{display:none}
+  .dash-hero::before{display:none}
+  .history{padding:1.1rem}
+  .chart{gap:.4rem}
+  .row-actions{white-space:normal}
+}
+
+@media(max-width:700px){
+  .history-head{flex-wrap:wrap;row-gap:.2rem}
+  .wl-table.stack{min-width:0}
+  .stack thead{position:absolute;left:-9999px}
+  .stack tr{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1rem;padding:.9rem 0;border-bottom:1px solid #efe0c6}
+  .stack td{display:block;padding:0;border:0}
+  .stack td[data-label]::before{content:attr(data-label);display:block;margin-bottom:.15rem;font-size:.75rem;font-weight:500;color:#8b6b4d}
+  .stack td:first-child{grid-column:1/-1;font-size:1.05rem}
+  .stack .meter-cell,.stack .row-actions{grid-column:1/-1}
+  .stack .row-actions{display:flex;gap:.6rem;text-align:left;margin-top:.2rem}
+  .stack .btn-danger{margin-left:0}
+  /* the "Mark received" button sits in the same column as the status badge */
+  .don>.btn-ghost{grid-column:2;justify-self:start}
+}

@@ -11,13 +11,13 @@ function Row({ w, onSave, onRemove }) {
   return (
     <tr>
       <td><strong>{w.item}</strong></td>
-      <td>
+      <td data-label="Category">
         <select value={cat} onChange={(e) => setCat(e.target.value)} aria-label={`Category for ${w.item}`}>
           {[...new Set([...CATEGORIES, w.category])].map((c) => <option key={c}>{c}</option>)}
         </select>
       </td>
-      <td><input type="number" min="1" max="100000" value={qty} onChange={(e) => setQty(e.target.value)} aria-label={`Quantity needed for ${w.item}`} /></td>
-      <td className="meter-cell"><Meter value={w.received} max={Number(qty) || w.quantity_needed} /><span className="meter-label">{w.received} received</span></td>
+      <td data-label="Needed"><input type="number" min="1" max="100000" value={qty} onChange={(e) => setQty(e.target.value)} aria-label={`Quantity needed for ${w.item}`} /></td>
+      <td className="meter-cell" data-label="Received"><Meter value={w.received} max={Number(qty) || w.quantity_needed} /><span className="meter-label">{w.received} received</span></td>
       <td className="row-actions">
         <button className="btn-ghost" disabled={!changed} onClick={() => onSave(w.id, qty, cat)}>Save</button>
         <button className="btn-danger" onClick={() => window.confirm(`Remove ${w.item} from the wishlist?`) && onRemove(w.id)}>Remove</button>
@@ -66,7 +66,7 @@ export default function AdminWishlist() {
         <h2>Wishlist</h2>
         <p className="history-sub">Change the quantity needed and press Save. The website shows how many are still needed.</p>
         <div className="table-scroll">
-          <table className="wl-table">
+          <table className="wl-table stack">
             <thead><tr><th>Item</th><th>Category</th><th>Needed</th><th>Received</th><th /></tr></thead>
             <tbody>
               {items?.map((w) => (

@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import logo from "../assets/logo.png";
 import "../styles/dashboard.css";
 import "../styles/admin.css";
+import "../styles/responsive.css";
 
 const Svg = ({ children }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{children}</svg>
@@ -43,6 +44,7 @@ export default function DashboardLayout() {
     <div className="sf dash">
       <aside className="dash-side">
         <Link to="/" aria-label="Sunfield Fortuna home"><img className="dash-logo" src={logo} alt="" /></Link>
+        {/* a <div>, not <nav>: the site-wide navbar styles target every <nav> tag */}
         <div className="dash-nav" role="navigation" aria-label="Dashboard">
           {(user.role === "admin" ? ADMIN_LINKS : MEMBER_LINKS).map(link)}
           <hr />

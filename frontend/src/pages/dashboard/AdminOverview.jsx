@@ -71,14 +71,14 @@ export default function AdminOverview() {
             <div className="history-head"><h2>Wishlist</h2><Link className="more" to="/dashboard/admin/wishlist">Manage wishlist →</Link></div>
             <p className="history-sub">Green bars show how much of the wanted amount has been donated.</p>
             <div className="table-scroll">
-              <table className="wl-table">
+              <table className="wl-table stack">
                 <thead><tr><th>Item</th><th>Category</th><th>Received</th><th>Progress</th></tr></thead>
                 <tbody>
                   {d.wishlist.map((w) => (
                     <tr key={w.id}>
-                      <td><strong>{w.item}</strong></td><td>{w.category}</td>
-                      <td>{w.received} / {w.quantity_needed}</td>
-                      <td><Meter value={w.received} max={w.quantity_needed} /></td>
+                      <td><strong>{w.item}</strong></td><td data-label="Category">{w.category}</td>
+                      <td data-label="Received">{w.received} / {w.quantity_needed}</td>
+                      <td className="meter-cell" data-label="Progress"><Meter value={w.received} max={w.quantity_needed} /></td>
                     </tr>
                   ))}
                 </tbody>
