@@ -1,4 +1,8 @@
 import "dotenv/config";
+
+console.log("COOKIE_SAMESITE:", process.env.COOKIE_SAMESITE);
+console.log("NODE_ENV:", process.env.NODE_ENV);
+
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
