@@ -22,7 +22,19 @@ const app = express();
 app.disable("x-powered-by");
 app.set("trust proxy", 1); 
 
-app.use(cors({ origin: (process.env.CORS_ORIGIN || "http://localhost:5173").split(","), credentials: true }));
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://www.sunfieldfortuna.co.za",
+  "https://gray-hill-085ae4c00.2.azurestaticapps.net",
+  ...(process.env.CORS_ORIGIN || "").split(",").map(origin => origin.trim()).filter(Boolean),
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 app.use(cookieParser());
 app.use(express.json({ limit: "20kb" }));
 
