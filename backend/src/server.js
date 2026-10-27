@@ -27,6 +27,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://www.sunfieldfortuna.co.za",
   "https://gray-hill-085ae4c00.2.azurestaticapps.net",
+  "https://main.d1b3g1xzr5dr4a.amplifyapp.com",
   ...(process.env.CORS_ORIGIN || "").split(",").map(origin => origin.trim()).filter(Boolean),
 ];
 
